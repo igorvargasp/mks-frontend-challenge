@@ -55,15 +55,17 @@ const Paragraph = styled.p`
 `;
 
 const CartItems = styled.div`
-  margin-top: 3rem;
-  display: flex;
+  margin-top: 1rem;
+
   width: 85%;
   height: 80px;
   background: #ffffff;
   box-shadow: -2px 2px 10px 0px #0000000d;
   border-radius: 8px;
   align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 5rem 8rem 5.5rem 5rem;
+  padding-left: 2rem;
 `;
 
 const Title = styled.h1`

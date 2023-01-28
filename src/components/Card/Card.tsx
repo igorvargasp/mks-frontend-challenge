@@ -1,8 +1,8 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { Container, Div, Button, Title, Description, Price } from "./style";
-import Image from "next/image";
 import { FiShoppingBag } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "@/store/sliceCart";
 
 export interface CardProps {
   id: number;
@@ -21,6 +21,7 @@ const Card: React.FC<CardProps> = ({
   photo,
   price,
 }) => {
+  const dispatch = useDispatch();
   return (
     <Container>
       <img
@@ -36,7 +37,20 @@ const Card: React.FC<CardProps> = ({
         <Description>{description}</Description>
       </Div>
 
-      <Button>
+      <Button
+        onClick={() =>
+          dispatch(
+            addItem({
+              id,
+              name,
+              brand,
+              description,
+              photo,
+              price,
+            })
+          )
+        }
+      >
         <FiShoppingBag
           width={5.25}
           height={2.25}

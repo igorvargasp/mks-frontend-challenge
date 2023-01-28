@@ -1,9 +1,11 @@
+import { store } from "@/store/store";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div>
       <head>
         <title>MKS STORE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,7 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </head>
-      <Component {...pageProps} />
-    </>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </div>
   );
 }
