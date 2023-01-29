@@ -29,7 +29,6 @@ export default function Products() {
 
           setProducts(items);
         }
-        console.log(response.data);
       } catch (error) {
         console.log(error);
       }

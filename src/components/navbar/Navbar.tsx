@@ -8,11 +8,6 @@ import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
   const [cartClick, setCartClick] = useState<boolean>(false);
   const cart = useSelector((state: any) => state.cart);
-  console.log(cart);
-
-  useEffect(() => {
-    console.log(cartClick);
-  }, [cartClick]);
 
   return (
     <Nav>
