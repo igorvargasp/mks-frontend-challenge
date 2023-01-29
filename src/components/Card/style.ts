@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 220px;
@@ -12,14 +12,14 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Div = styled.div`
+export const Div = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
   width: 90%;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   width: 100%;
   border: none;
   outline: none;
@@ -36,13 +36,13 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-weight: 400;
   font-size: 16px;
   color: #2c2c2c;
 `;
 
-const Description = styled.p`
+export const Description = styled.span`
   diplay: block;
   position: absolute;
   top: 40px;
@@ -52,7 +52,7 @@ const Description = styled.p`
   color: #2c2c2c;
 `;
 
-const Price = styled.button`
+export const Price = styled.button`
   background: #373737;
   width: 40%;
   height: 26px;
@@ -66,5 +66,3 @@ const Price = styled.button`
   display: flex;
   align-items: center;
 `;
-
-export { Container, Div, Button, Title, Description, Price };

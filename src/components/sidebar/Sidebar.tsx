@@ -1,21 +1,9 @@
 import React from "react";
-import {
-  Container,
-  Header,
-  Footer,
-  Button,
-  Paragraph,
-  CartItems,
-  Title,
-  Price,
-  Qtd,
-  Substraction,
-  AddUp,
-} from "./style";
+import { Container, Header, Footer, Button, Paragraph } from "./style";
 import { IoCloseCircle } from "react-icons/io5";
 import { useSelector } from "react-redux";
-import { Product, addItem, clearItem, removeItem } from "@/store/sliceCart";
-import { useDispatch } from "react-redux";
+import { Product } from "@/store/sliceCart";
+import Cart from "../cart/Cart";
 
 export interface SidebarProps {
   setCartClick: React.Dispatch<React.SetStateAction<boolean>>;
@@ -23,7 +11,6 @@ export interface SidebarProps {
 
 const Sidebar = ({ setCartClick }: SidebarProps) => {
   const cart = useSelector((state: any) => state.cart);
-  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -55,46 +42,16 @@ const Sidebar = ({ setCartClick }: SidebarProps) => {
           }}
         >
           {cart.items.map((item: Product, index: number) => (
-            <CartItems>
-              <img src={item.photo} width={46} height={57} />
-              <Title>{item.name}</Title>
-              <div
-                style={{
-                  width: "60px",
-                  border: "0.3px solid #BFBFBF",
-                  boxShadow: "-5px 0px 6px rgba(0, 0, 0, 0.13)",
-                  borderRadius: "4px",
-                  outline: "none",
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                  position: "relative",
-                  height: "22px",
-                }}
-              >
-                <IoCloseCircle
-                  style={{
-                    width: "25px",
-                    height: "25px",
-                    fill: "black",
-                    cursor: "pointer",
-                    position: "absolute",
-                    bottom: "2.1rem",
-                    left: "9.7rem",
-                  }}
-                  onClick={() => dispatch(clearItem(item))}
-                />
-                <Qtd>Qtd</Qtd>
-                <Substraction onClick={() => dispatch(removeItem(item))}>
-                  -
-                </Substraction>
-                <span style={{ fontWeight: "700", fontSize: "8px" }}>
-                  {item.quantity}
-                </span>
-                <AddUp onClick={() => dispatch(addItem(item))}>+</AddUp>
-              </div>
-              <Price>R$ {item.price}</Price>
-            </CartItems>
+            <Cart
+              key={index}
+              id={item.id}
+              name={item.name}
+              brand={item.brand}
+              description={item.description}
+              photo={item.photo}
+              price={item.price}
+              quantity={item.quantity}
+            />
           ))}
         </div>
       </div>

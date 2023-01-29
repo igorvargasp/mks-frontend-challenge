@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Div, Button, Title, Description, Price } from "./style";
 import { FiShoppingBag } from "react-icons/fi";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "@/store/sliceCart";
 
 export interface CardProps {

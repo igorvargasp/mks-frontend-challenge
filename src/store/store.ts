@@ -1,5 +1,4 @@
-import { configureStore, PreloadedState } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
 import { cartReducer } from "./sliceCart";
 
 export const store = configureStore({

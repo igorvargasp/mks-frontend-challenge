@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CustomFooter = styled.footer`
+export const CustomFooter = styled.div`
   width: 100%;
   font-size: 12px;
   height: 34px;
@@ -11,5 +11,3 @@ const CustomFooter = styled.footer`
   justify-content: center;
   background: #eeeeee;
 `;
-
-export { CustomFooter };

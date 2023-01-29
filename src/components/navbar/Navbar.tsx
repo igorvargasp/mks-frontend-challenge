@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { BsCart4 } from "react-icons/bs";
 import { Nav, Container, Div, H1, Span, Button, Strong } from "./style";
-import { Sidebar } from "../index";
 import { useSelector } from "react-redux";
+import Sidebar from "../sidebar/Sidebar";
 
 function Navbar() {
   const [cartClick, setCartClick] = useState<boolean>(false);
