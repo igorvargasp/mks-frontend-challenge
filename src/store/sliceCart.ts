@@ -50,10 +50,12 @@ export const cartSlice = createSlice({
         existingItem.quantity ? existingItem.quantity-- : null;
         state.totalAmount -= Number(existingItem.price);
         if (existingItem.quantity === 0) {
-          state.totalAmount = 0;
           state.items = state.items.filter(
             (item) => item.id !== existingItem.id
           );
+          for (let i = 0; i < existingItem.quantity; i++) {
+            state.totalAmount -= Number(existingItem.price);
+          }
         }
       }
     },
@@ -63,10 +65,10 @@ export const cartSlice = createSlice({
         (item) => item.id === updatedItem.id
       );
       if (existingItem && existingItem.quantity) {
+        state.items = state.items.filter((item) => item.id !== existingItem.id);
         for (let i = 0; i < existingItem.quantity; i++) {
           state.totalAmount -= Number(existingItem.price);
         }
-        state.items = state.items.filter((item) => item.id !== existingItem.id);
       }
     },
   },
