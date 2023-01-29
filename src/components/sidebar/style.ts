@@ -53,3 +53,12 @@ export const Paragraph = styled.span`
   color: white;
   padding-left: 2rem;
 `;
+
+export const Wrapper = styled.div`
+  display: flex,
+  flex-direction: column,
+  width: 100%,
+  justify-content: center,
+  align-items: center,
+  margin-top: 2rem,
+`;

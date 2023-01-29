@@ -2,7 +2,7 @@ import React from "react";
 import { CartItems } from "./style";
 import { IoCloseCircle } from "react-icons/io5";
 import { Product, addItem, clearItem, removeItem } from "@/store/sliceCart";
-import { Qtd, Substraction, AddUp, Price, Title } from "./style";
+import { Qtd, Substraction, AddUp, Price, Title, Container } from "./style";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Cart({
@@ -20,7 +20,7 @@ export default function Cart({
     <CartItems>
       <img src={photo} width={46} height={57} />
       <Title>{name}</Title>
-      <div
+      <Container
         style={{
           width: "60px",
           border: "0.3px solid #BFBFBF",
@@ -94,7 +94,7 @@ export default function Cart({
         >
           +
         </AddUp>
-      </div>
+      </Container>
       <Price>R$ {price}</Price>
     </CartItems>
   );

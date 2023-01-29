@@ -49,3 +49,16 @@ export const AddUp = styled.div`
   align-items: center;
   cursor: pointer;
 `;
+
+export const Container = styled.div`
+  width: 60px,
+  border: 0.3px solid #BFBFBF,
+  box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13),
+  border-radius: 4px,
+  outline: none,
+  display: flex,
+  justify-content: space-evenly,
+  align-items: center,
+  position: relative,
+  height: 22px,
+`;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Header, Footer, Button, Paragraph } from "./style";
+import { Container, Header, Footer, Button, Paragraph, Wrapper } from "./style";
 import { IoCloseCircle } from "react-icons/io5";
 import { useSelector } from "react-redux";
 import { Product } from "@/store/sliceCart";
@@ -31,7 +31,7 @@ const Sidebar = ({ setCartClick }: SidebarProps) => {
           />
         </Header>
 
-        <div
+        <Wrapper
           style={{
             display: "flex",
             flexDirection: "column",
@@ -53,7 +53,7 @@ const Sidebar = ({ setCartClick }: SidebarProps) => {
               quantity={item.quantity}
             />
           ))}
-        </div>
+        </Wrapper>
       </div>
 
       <Footer>
